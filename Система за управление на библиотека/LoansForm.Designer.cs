@@ -30,13 +30,16 @@
         {
             comboBoxBooks = new ComboBox();
             comboBoxReaders = new ComboBox();
-            dateTimePickerLoan = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePickerLoanDate = new DateTimePicker();
+            dateTimePickerReturnDate = new DateTimePicker();
             dataGridViewLoans = new DataGridView();
             labelBook = new Label();
             labelReader = new Label();
             labelLoanDate = new Label();
             labelReturnDate = new Label();
+            buttonLoanBook = new Button();
+            buttonReturnBook = new Button();
+            buttonCleanLoan = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewLoans).BeginInit();
             SuspendLayout();
             // 
@@ -56,19 +59,30 @@
             comboBoxReaders.Size = new Size(250, 28);
             comboBoxReaders.TabIndex = 1;
             // 
-            // dateTimePickerLoan
+            // dateTimePickerLoanDate
             // 
-            dateTimePickerLoan.Location = new Point(140, 135);
-            dateTimePickerLoan.Name = "dateTimePickerLoan";
-            dateTimePickerLoan.Size = new Size(250, 27);
-            dateTimePickerLoan.TabIndex = 2;
+            dateTimePickerLoanDate.CalendarForeColor = Color.Black;
+            dateTimePickerLoanDate.CalendarMonthBackground = Color.White;
+            dateTimePickerLoanDate.CalendarTitleForeColor = Color.Black;
+            dateTimePickerLoanDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerLoanDate.Format = DateTimePickerFormat.Custom;
+            dateTimePickerLoanDate.Location = new Point(140, 135);
+            dateTimePickerLoanDate.Name = "dateTimePickerLoanDate";
+            dateTimePickerLoanDate.Size = new Size(250, 27);
+            dateTimePickerLoanDate.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // dateTimePickerReturnDate
             // 
-            dateTimePicker2.Location = new Point(140, 185);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 3;
+            dateTimePickerReturnDate.CalendarFont = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dateTimePickerReturnDate.CalendarForeColor = Color.Black;
+            dateTimePickerReturnDate.CalendarMonthBackground = Color.White;
+            dateTimePickerReturnDate.CalendarTitleForeColor = Color.Black;
+            dateTimePickerReturnDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerReturnDate.Format = DateTimePickerFormat.Custom;
+            dateTimePickerReturnDate.Location = new Point(140, 185);
+            dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
+            dateTimePickerReturnDate.Size = new Size(250, 27);
+            dateTimePickerReturnDate.TabIndex = 3;
             // 
             // dataGridViewLoans
             // 
@@ -121,18 +135,64 @@
             labelReturnDate.TabIndex = 19;
             labelReturnDate.Text = "Краен срок:";
             // 
+            // buttonLoanBook
+            // 
+            buttonLoanBook.BackColor = SystemColors.Control;
+            buttonLoanBook.Cursor = Cursors.Hand;
+            buttonLoanBook.FlatStyle = FlatStyle.Flat;
+            buttonLoanBook.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonLoanBook.ForeColor = Color.Black;
+            buttonLoanBook.Location = new Point(420, 35);
+            buttonLoanBook.Name = "buttonLoanBook";
+            buttonLoanBook.Size = new Size(120, 40);
+            buttonLoanBook.TabIndex = 20;
+            buttonLoanBook.Text = "Заеми";
+            buttonLoanBook.UseVisualStyleBackColor = false;
+            buttonLoanBook.Click += buttonLoanBook_Click;
+            // 
+            // buttonReturnBook
+            // 
+            buttonReturnBook.Cursor = Cursors.Hand;
+            buttonReturnBook.FlatStyle = FlatStyle.Flat;
+            buttonReturnBook.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonReturnBook.ForeColor = Color.Black;
+            buttonReturnBook.Location = new Point(420, 95);
+            buttonReturnBook.Name = "buttonReturnBook";
+            buttonReturnBook.Size = new Size(120, 40);
+            buttonReturnBook.TabIndex = 21;
+            buttonReturnBook.Text = "Върни";
+            buttonReturnBook.UseVisualStyleBackColor = true;
+            buttonReturnBook.Click += buttonReturnBook_Click;
+            // 
+            // buttonCleanLoan
+            // 
+            buttonCleanLoan.Cursor = Cursors.Hand;
+            buttonCleanLoan.FlatStyle = FlatStyle.Flat;
+            buttonCleanLoan.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonCleanLoan.ForeColor = Color.Black;
+            buttonCleanLoan.Location = new Point(420, 155);
+            buttonCleanLoan.Name = "buttonCleanLoan";
+            buttonCleanLoan.Size = new Size(120, 40);
+            buttonCleanLoan.TabIndex = 22;
+            buttonCleanLoan.Text = "Изчисти";
+            buttonCleanLoan.UseVisualStyleBackColor = true;
+            buttonCleanLoan.Click += buttonCleanLoan_Click;
+            // 
             // LoansForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonCleanLoan);
+            Controls.Add(buttonReturnBook);
+            Controls.Add(buttonLoanBook);
             Controls.Add(labelReturnDate);
             Controls.Add(labelLoanDate);
             Controls.Add(labelReader);
             Controls.Add(labelBook);
             Controls.Add(dataGridViewLoans);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePickerLoan);
+            Controls.Add(dateTimePickerReturnDate);
+            Controls.Add(dateTimePickerLoanDate);
             Controls.Add(comboBoxReaders);
             Controls.Add(comboBoxBooks);
             Name = "LoansForm";
@@ -146,12 +206,15 @@
 
         private ComboBox comboBoxBooks;
         private ComboBox comboBoxReaders;
-        private DateTimePicker dateTimePickerLoan;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePickerLoanDate;
+        private DateTimePicker dateTimePickerReturnDate;
         private DataGridView dataGridViewLoans;
         private Label labelBook;
         private Label labelReader;
         private Label labelLoanDate;
         private Label labelReturnDate;
+        private Button buttonLoanBook;
+        private Button buttonReturnBook;
+        private Button buttonCleanLoan;
     }
 }

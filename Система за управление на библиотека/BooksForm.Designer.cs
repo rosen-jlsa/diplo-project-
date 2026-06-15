@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             groupBoxBookInfo = new GroupBox();
-            labelTitle = new Label();
-            textBoxTitle = new TextBox();
-            labelAuthor = new Label();
-            labelGenre = new Label();
-            textBoxAuthor = new TextBox();
-            comboBoxGenre = new ComboBox();
-            labelYear = new Label();
-            labelCopies = new Label();
-            numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
+            numericUpDown1 = new NumericUpDown();
+            labelCopies = new Label();
+            labelYear = new Label();
+            comboBoxGenre = new ComboBox();
+            textBoxAuthor = new TextBox();
+            labelGenre = new Label();
+            labelAuthor = new Label();
+            textBoxTitle = new TextBox();
+            labelTitle = new Label();
             buttonAddBook = new Button();
             buttonEditBook = new Button();
             buttonDeleteBook = new Button();
-            button3 = new Button();
+            buttonClearBook = new Button();
             dataGridViewBooks = new DataGridView();
             groupBoxBookInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewBooks).BeginInit();
             SuspendLayout();
             // 
@@ -69,54 +69,28 @@
             groupBoxBookInfo.TabStop = false;
             groupBoxBookInfo.Text = "Информация за книга";
             // 
-            // labelTitle
+            // numericUpDown2
             // 
-            labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(20, 40);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(75, 20);
-            labelTitle.TabIndex = 0;
-            labelTitle.Text = "Заглавие:";
+            numericUpDown2.Location = new Point(140, 215);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(150, 27);
+            numericUpDown2.TabIndex = 9;
             // 
-            // textBoxTitle
+            // numericUpDown1
             // 
-            textBoxTitle.Location = new Point(140, 35);
-            textBoxTitle.Name = "textBoxTitle";
-            textBoxTitle.Size = new Size(250, 27);
-            textBoxTitle.TabIndex = 1;
+            numericUpDown1.Location = new Point(140, 170);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(150, 27);
+            numericUpDown1.TabIndex = 8;
             // 
-            // labelAuthor
+            // labelCopies
             // 
-            labelAuthor.AutoSize = true;
-            labelAuthor.Location = new Point(20, 85);
-            labelAuthor.Name = "labelAuthor";
-            labelAuthor.Size = new Size(54, 20);
-            labelAuthor.TabIndex = 2;
-            labelAuthor.Text = "Автор:";
-            // 
-            // labelGenre
-            // 
-            labelGenre.AutoSize = true;
-            labelGenre.Location = new Point(20, 130);
-            labelGenre.Name = "labelGenre";
-            labelGenre.Size = new Size(51, 20);
-            labelGenre.TabIndex = 3;
-            labelGenre.Text = "Жанр:";
-            // 
-            // textBoxAuthor
-            // 
-            textBoxAuthor.Location = new Point(140, 80);
-            textBoxAuthor.Name = "textBoxAuthor";
-            textBoxAuthor.Size = new Size(250, 27);
-            textBoxAuthor.TabIndex = 4;
-            // 
-            // comboBoxGenre
-            // 
-            comboBoxGenre.FormattingEnabled = true;
-            comboBoxGenre.Location = new Point(140, 125);
-            comboBoxGenre.Name = "comboBoxGenre";
-            comboBoxGenre.Size = new Size(250, 28);
-            comboBoxGenre.TabIndex = 5;
+            labelCopies.AutoSize = true;
+            labelCopies.Location = new Point(20, 220);
+            labelCopies.Name = "labelCopies";
+            labelCopies.Size = new Size(64, 20);
+            labelCopies.TabIndex = 7;
+            labelCopies.Text = "Бройки:";
             // 
             // labelYear
             // 
@@ -128,28 +102,54 @@
             labelYear.Text = "Година:";
             labelYear.Click += label1_Click;
             // 
-            // labelCopies
+            // comboBoxGenre
             // 
-            labelCopies.AutoSize = true;
-            labelCopies.Location = new Point(20, 220);
-            labelCopies.Name = "labelCopies";
-            labelCopies.Size = new Size(64, 20);
-            labelCopies.TabIndex = 7;
-            labelCopies.Text = "Бройки:";
+            comboBoxGenre.FormattingEnabled = true;
+            comboBoxGenre.Location = new Point(140, 125);
+            comboBoxGenre.Name = "comboBoxGenre";
+            comboBoxGenre.Size = new Size(250, 28);
+            comboBoxGenre.TabIndex = 5;
             // 
-            // numericUpDown1
+            // textBoxAuthor
             // 
-            numericUpDown1.Location = new Point(140, 170);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 27);
-            numericUpDown1.TabIndex = 8;
+            textBoxAuthor.Location = new Point(140, 80);
+            textBoxAuthor.Name = "textBoxAuthor";
+            textBoxAuthor.Size = new Size(250, 27);
+            textBoxAuthor.TabIndex = 4;
             // 
-            // numericUpDown2
+            // labelGenre
             // 
-            numericUpDown2.Location = new Point(140, 215);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(150, 27);
-            numericUpDown2.TabIndex = 9;
+            labelGenre.AutoSize = true;
+            labelGenre.Location = new Point(20, 130);
+            labelGenre.Name = "labelGenre";
+            labelGenre.Size = new Size(51, 20);
+            labelGenre.TabIndex = 3;
+            labelGenre.Text = "Жанр:";
+            // 
+            // labelAuthor
+            // 
+            labelAuthor.AutoSize = true;
+            labelAuthor.Location = new Point(20, 85);
+            labelAuthor.Name = "labelAuthor";
+            labelAuthor.Size = new Size(54, 20);
+            labelAuthor.TabIndex = 2;
+            labelAuthor.Text = "Автор:";
+            // 
+            // textBoxTitle
+            // 
+            textBoxTitle.Location = new Point(140, 35);
+            textBoxTitle.Name = "textBoxTitle";
+            textBoxTitle.Size = new Size(250, 27);
+            textBoxTitle.TabIndex = 1;
+            // 
+            // labelTitle
+            // 
+            labelTitle.AutoSize = true;
+            labelTitle.Location = new Point(20, 40);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(75, 20);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Заглавие:";
             // 
             // buttonAddBook
             // 
@@ -163,6 +163,7 @@
             buttonAddBook.TabIndex = 10;
             buttonAddBook.Text = "Добави";
             buttonAddBook.UseVisualStyleBackColor = true;
+            buttonAddBook.Click += buttonAddBook_Click;
             // 
             // buttonEditBook
             // 
@@ -176,6 +177,7 @@
             buttonEditBook.TabIndex = 11;
             buttonEditBook.Text = "Редактирай";
             buttonEditBook.UseVisualStyleBackColor = true;
+            buttonEditBook.Click += buttonEditBook_Click;
             // 
             // buttonDeleteBook
             // 
@@ -189,19 +191,21 @@
             buttonDeleteBook.TabIndex = 12;
             buttonDeleteBook.Text = "Изтрий";
             buttonDeleteBook.UseVisualStyleBackColor = true;
+            buttonDeleteBook.Click += buttonDeleteBook_Click;
             // 
-            // button3
+            // buttonClearBook
             // 
-            button3.Cursor = Cursors.Hand;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button3.ForeColor = Color.FromArgb(156, 163, 175);
-            button3.Location = new Point(580, 205);
-            button3.Name = "button3";
-            button3.Size = new Size(120, 40);
-            button3.TabIndex = 13;
-            button3.Text = "Изчисти";
-            button3.UseVisualStyleBackColor = true;
+            buttonClearBook.Cursor = Cursors.Hand;
+            buttonClearBook.FlatStyle = FlatStyle.Flat;
+            buttonClearBook.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonClearBook.ForeColor = Color.FromArgb(156, 163, 175);
+            buttonClearBook.Location = new Point(580, 205);
+            buttonClearBook.Name = "buttonClearBook";
+            buttonClearBook.Size = new Size(120, 40);
+            buttonClearBook.TabIndex = 13;
+            buttonClearBook.Text = "Изчисти";
+            buttonClearBook.UseVisualStyleBackColor = true;
+            buttonClearBook.Click += buttonClearBook_Click_1;
             // 
             // dataGridViewBooks
             // 
@@ -223,7 +227,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridViewBooks);
-            Controls.Add(button3);
+            Controls.Add(buttonClearBook);
             Controls.Add(buttonDeleteBook);
             Controls.Add(buttonEditBook);
             Controls.Add(buttonAddBook);
@@ -233,8 +237,8 @@
             Load += BooksForm_Load;
             groupBoxBookInfo.ResumeLayout(false);
             groupBoxBookInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewBooks).EndInit();
             ResumeLayout(false);
         }
@@ -255,7 +259,7 @@
         private Button buttonAddBook;
         private Button buttonEditBook;
         private Button buttonDeleteBook;
-        private Button button3;
+        private Button buttonClearBook;
         private DataGridView dataGridViewBooks;
     }
 }

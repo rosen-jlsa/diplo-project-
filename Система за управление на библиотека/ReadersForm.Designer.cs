@@ -38,6 +38,10 @@
             labelPhone = new Label();
             labelEmail = new Label();
             label1 = new Label();
+            buttonAddReader = new Button();
+            buttonEditReader = new Button();
+            buttonDeleteReader = new Button();
+            buttonClear = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReaders).BeginInit();
             groupBoxReaderInfo.SuspendLayout();
             SuspendLayout();
@@ -66,9 +70,17 @@
             // 
             // dateTimePickerRegister
             // 
+            dateTimePickerRegister.CalendarFont = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            dateTimePickerRegister.CalendarForeColor = Color.Black;
+            dateTimePickerRegister.CalendarMonthBackground = Color.White;
+            dateTimePickerRegister.CalendarTitleBackColor = SystemColors.ActiveBorder;
+            dateTimePickerRegister.CalendarTitleForeColor = Color.Black;
+            dateTimePickerRegister.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerRegister.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dateTimePickerRegister.Format = DateTimePickerFormat.Custom;
             dateTimePickerRegister.Location = new Point(170, 155);
             dateTimePickerRegister.Name = "dateTimePickerRegister";
-            dateTimePickerRegister.Size = new Size(250, 27);
+            dateTimePickerRegister.Size = new Size(250, 30);
             dateTimePickerRegister.TabIndex = 3;
             // 
             // dataGridViewReaders
@@ -97,7 +109,7 @@
             groupBoxReaderInfo.Controls.Add(textBoxPhone);
             groupBoxReaderInfo.Location = new Point(20, 20);
             groupBoxReaderInfo.Name = "groupBoxReaderInfo";
-            groupBoxReaderInfo.Size = new Size(520, 220);
+            groupBoxReaderInfo.Size = new Size(580, 250);
             groupBoxReaderInfo.TabIndex = 16;
             groupBoxReaderInfo.TabStop = false;
             groupBoxReaderInfo.Text = "Данни за читател";
@@ -144,11 +156,71 @@
             label1.TabIndex = 4;
             label1.Text = "Име:";
             // 
+            // buttonAddReader
+            // 
+            buttonAddReader.Cursor = Cursors.Hand;
+            buttonAddReader.FlatStyle = FlatStyle.Flat;
+            buttonAddReader.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonAddReader.ForeColor = Color.FromArgb(59, 130, 246);
+            buttonAddReader.Location = new Point(600, 40);
+            buttonAddReader.Name = "buttonAddReader";
+            buttonAddReader.Size = new Size(120, 40);
+            buttonAddReader.TabIndex = 18;
+            buttonAddReader.Text = "Добави";
+            buttonAddReader.UseVisualStyleBackColor = true;
+            buttonAddReader.Click += buttonAddReader_Click;
+            // 
+            // buttonEditReader
+            // 
+            buttonEditReader.Cursor = Cursors.Hand;
+            buttonEditReader.FlatStyle = FlatStyle.Flat;
+            buttonEditReader.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonEditReader.ForeColor = Color.FromArgb(255, 192, 128);
+            buttonEditReader.Location = new Point(600, 90);
+            buttonEditReader.Name = "buttonEditReader";
+            buttonEditReader.Size = new Size(120, 40);
+            buttonEditReader.TabIndex = 19;
+            buttonEditReader.Text = "Редактирай";
+            buttonEditReader.UseVisualStyleBackColor = true;
+            buttonEditReader.Click += buttonEditReader_Click;
+            // 
+            // buttonDeleteReader
+            // 
+            buttonDeleteReader.Cursor = Cursors.Hand;
+            buttonDeleteReader.FlatStyle = FlatStyle.Flat;
+            buttonDeleteReader.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonDeleteReader.ForeColor = Color.Red;
+            buttonDeleteReader.Location = new Point(600, 140);
+            buttonDeleteReader.Name = "buttonDeleteReader";
+            buttonDeleteReader.Size = new Size(120, 40);
+            buttonDeleteReader.TabIndex = 20;
+            buttonDeleteReader.Text = "Изтрий";
+            buttonDeleteReader.UseVisualStyleBackColor = true;
+            buttonDeleteReader.Click += buttonDeleteReader_Click;
+            // 
+            // buttonClear
+            // 
+            buttonClear.Cursor = Cursors.Hand;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonClear.ForeColor = SystemColors.ControlDarkDark;
+            buttonClear.Location = new Point(600, 190);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(120, 40);
+            buttonClear.TabIndex = 21;
+            buttonClear.Text = "Изчисти";
+            buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
+            // 
             // ReadersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonClear);
+            Controls.Add(buttonDeleteReader);
+            Controls.Add(buttonEditReader);
+            Controls.Add(buttonAddReader);
             Controls.Add(dataGridViewReaders);
             Controls.Add(groupBoxReaderInfo);
             Name = "ReadersForm";
@@ -171,5 +243,9 @@
         private Label labelRegister;
         private Label labelPhone;
         private Label labelEmail;
+        private Button buttonAddReader;
+        private Button buttonEditReader;
+        private Button buttonDeleteReader;
+        private Button buttonClear;
     }
 }

@@ -20,5 +20,20 @@ namespace Система_за_управление_на_библиотека
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
         }
+
+        private void buttonLoanBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReturnBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCleanLoan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

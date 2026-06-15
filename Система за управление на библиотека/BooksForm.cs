@@ -30,5 +30,30 @@ namespace Система_за_управление_на_библиотека
         {
 
         }
+
+        private void buttonAddBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEditBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeleteBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClearBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClearBook_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
